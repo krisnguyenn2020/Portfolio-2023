@@ -1,6 +1,7 @@
 {
   "name": "my-project",
-  "private": true,
+  "private": false,
+  "homepage": "https://krisnguyenn2020.github.io/Portfolio-2023/",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
