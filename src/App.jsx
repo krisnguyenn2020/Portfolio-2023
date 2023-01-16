@@ -1,48 +1,47 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
 import "./App.css";
-
+import "./index.css";
+import { BsFillMoonStarsFill } from "react-icons/bs";
+// import { CiDark } from "react-icons/ci";
+import { AiFillTwitterCircle, AiFillLinkedin } from "react-icons/ai";
 function App() {
-    const [count, setCount] = useState(0);
-
-    return (
-        <div className="App">
-            <div className="pt-12 font">
-                <h1 className="text-center text-black text-4xl font-medium font-semibold mb-5">
-                    Live anywhere
-                </h1>
-                <h2 className="text-center font-light text-xl text-gray-500 mb-10">
-                    Keep calm & Travel On
-                </h2>
-                <div className="item-container flex justify-center p-5 max-h-52">
-                    <div className="grid grid-cols-3 gap-4 absolute">
-                        <div className="max-h-4">
-                            <img
-                                src="https://source.unsplash.com/random"
-                                alt=""
-                                srcset=""
-                            />
-                            <h4 className="title">Hello</h4>
-                            <p>Random</p>
-                        </div>
-                        <img
-                            src="https://source.unsplash.com/random"
-                            alt=""
-                            srcset=""
-                        />
-                        <div className="">
-                            <img
-                                src="https://source.unsplash.com/random"
-                                alt=""
-                                srcset=""
-                            />
-                        </div>
-                        <div className=""></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    );
+   return (
+      <div className="App">
+         <div className="main px-10">
+            <section className="min-h-screen">
+               <nav className="py-10 mb-12 flex justify-between">
+                  <h1 className="text-xl font-burtons">Kris - Front End Dev</h1>
+                  <ul className="flex items-center">
+                     <li>
+                        <BsFillMoonStarsFill className="cursor-pointer text-2xl" />
+                     </li>
+                     <li>
+                        <a
+                           className="bg-gradient-to-r from-cyan-500 to-teal-500 text-white px-4 py-2 rounded-md ml-7"
+                           href="#"
+                        >
+                           Resume
+                        </a>
+                     </li>
+                  </ul>
+               </nav>
+               <div id="introduction" className="text-center p-10">
+                  <h2 className="text-5xl py-2 text-teal-600 font-medium">Kris Nguyen</h2>
+                  <h3 className="text-2xl py-2">Front-End Developer</h3>
+                  <p className="py-5 leading-8 text-gray-800">
+                     Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                     Nam et qui excepturi, voluptatum a, eum quae, labore
+                     reprehenderit repellendus distinctio tenetur quod? Nesciunt
+                     facere non magnam quos sit et harum?
+                  </p>
+               </div>
+               <div id="social" className="flex text-5xl gap-16 justify-center">
+                  <AiFillTwitterCircle />
+                  <AiFillLinkedin />
+               </div>
+            </section>
+         </div>
+      </div>
+   );
 }
 
 export default App;
