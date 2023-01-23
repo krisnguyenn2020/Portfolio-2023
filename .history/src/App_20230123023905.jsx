@@ -41,7 +41,7 @@ function App() {
       <div className="App">
          <div className="">
         
-            <section className="min-h-screen bg-gradient-to-t from-cyan-400 to-pink-100">
+            {/* <section className="min-h-screen bg-gradient-to-t from-cyan-400 to-pink-100">
                <nav className="py-10 mb-12 flex justify-between">
                   <div className="flex">
                      <h1 className="text-xl font-burtons cursor-pointer font-bold hover:text-slate-500 ml-5">
@@ -98,7 +98,7 @@ function App() {
                      Designed and Developed by Kris Nguyen
                   </div>
                </section>
-            </section>
+            </section> */}
          
                {/* <Photo /> */}
             <div className="grid grid-cols-4 gap-20 p-5 ">

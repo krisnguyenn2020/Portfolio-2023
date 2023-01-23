@@ -2,22 +2,23 @@ import "./App.css";
 import "./index.css";
 import deved from "./public/Dev-removebg-preview.png";
 import { BsFillMoonStarsFill } from "react-icons/bs";
+import { useState,useEffect } from "react";
 // import { CiDark } from "react-icons/ci";
 import { AiFillGithub, AiFillLinkedin } from "react-icons/ai";
 import ContactForm from "../components/ContactForm";
 import Photo from "../components/Photo";
-import React, { useEffect } from "react";
-import axios from "axios";
-import { useState } from "react";
-const getRandomPhoto = async (page) => {
-   try {
-      const response = await axios
-         .get(`https://picsum.photos/v2/list?page=${page}&limit=8`);
-      return response.data;
-   } catch (err) {
-      // Handle error
-      console.log(err);
-   }
+const getRandomPhoto = (page) => {
+   return axios
+      .get(`https://picsum.photos/v2/list?page=${page}&limit=8`)
+      .then((response) => {
+         // Handle success
+         //  console.log(response);
+         return response.data;
+      })
+      .catch((err) => {
+         // Handle error
+         console.log(err);
+      });
 };
 function App() {
     const [page, setPage] = useState(1);
@@ -37,10 +38,15 @@ function App() {
          setPage(page + 1);
       });
    };
+
+   useEffect(() => {
+      handleLoadMore();
+   }, []);
+
    return (
       <div className="App">
          <div className="">
-        
+ 
             <section className="min-h-screen bg-gradient-to-t from-cyan-400 to-pink-100">
                <nav className="py-10 mb-12 flex justify-between">
                   <div className="flex">
@@ -100,8 +106,11 @@ function App() {
                </section>
             </section>
          
-               {/* <Photo /> */}
-            <div className="grid grid-cols-4 gap-20 p-5 ">
+               {/* <Photo></Photo> */}
+            
+         </div>
+          <div className="">
+         <div className="grid grid-cols-4 gap-20 p-5 ">
             {randomPhotos.length > 0 &&
                randomPhotos.map((item, index) => {
                   return (
@@ -126,7 +135,7 @@ function App() {
                Load More
             </button>
          </div>
-         </div>
+      </div>
       </div>
    );
 }

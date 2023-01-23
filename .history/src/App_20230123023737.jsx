@@ -9,15 +9,18 @@ import Photo from "../components/Photo";
 import React, { useEffect } from "react";
 import axios from "axios";
 import { useState } from "react";
-const getRandomPhoto = async (page) => {
-   try {
-      const response = await axios
-         .get(`https://picsum.photos/v2/list?page=${page}&limit=8`);
-      return response.data;
-   } catch (err) {
-      // Handle error
-      console.log(err);
-   }
+const getRandomPhoto = (page) => {
+   return axios
+      .get(`https://picsum.photos/v2/list?page=${page}&limit=8`)
+      .then((response) => {
+         // Handle success
+         //  console.log(response);
+         return response.data;
+      })
+      .catch((err) => {
+         // Handle error
+         console.log(err);
+      });
 };
 function App() {
     const [page, setPage] = useState(1);
@@ -41,7 +44,7 @@ function App() {
       <div className="App">
          <div className="">
         
-            <section className="min-h-screen bg-gradient-to-t from-cyan-400 to-pink-100">
+            {/* <section className="min-h-screen bg-gradient-to-t from-cyan-400 to-pink-100">
                <nav className="py-10 mb-12 flex justify-between">
                   <div className="flex">
                      <h1 className="text-xl font-burtons cursor-pointer font-bold hover:text-slate-500 ml-5">
@@ -98,7 +101,7 @@ function App() {
                      Designed and Developed by Kris Nguyen
                   </div>
                </section>
-            </section>
+            </section> */}
          
                {/* <Photo /> */}
             <div className="grid grid-cols-4 gap-20 p-5 ">

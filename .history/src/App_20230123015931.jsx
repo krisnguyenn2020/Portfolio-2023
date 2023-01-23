@@ -6,42 +6,12 @@ import { BsFillMoonStarsFill } from "react-icons/bs";
 import { AiFillGithub, AiFillLinkedin } from "react-icons/ai";
 import ContactForm from "../components/ContactForm";
 import Photo from "../components/Photo";
-import React, { useEffect } from "react";
-import axios from "axios";
-import { useState } from "react";
-const getRandomPhoto = async (page) => {
-   try {
-      const response = await axios
-         .get(`https://picsum.photos/v2/list?page=${page}&limit=8`);
-      return response.data;
-   } catch (err) {
-      // Handle error
-      console.log(err);
-   }
-};
 function App() {
-    const [page, setPage] = useState(1);
-
-   const [randomPhotos, setRandomPhotos] = useState([]);
-
-   const handleLoadMore = () => {
-      // console.log("load more");
-      // parameter name can be whatever
-      getRandomPhoto(page).then((images) => {
-         
-         // Set vào state
-         const newPhotos = [...randomPhotos, ...images];
-         console.log(newPhotos);
-         console.log("GetRandomPhotos ~ newPhotos", newPhotos);
-         setRandomPhotos(newPhotos);
-         setPage(page + 1);
-      });
-   };
    return (
       <div className="App">
          <div className="">
-        
-            <section className="min-h-screen bg-gradient-to-t from-cyan-400 to-pink-100">
+         Hello
+            {/* <section className="min-h-screen bg-gradient-to-t from-cyan-400 to-pink-100">
                <nav className="py-10 mb-12 flex justify-between">
                   <div className="flex">
                      <h1 className="text-xl font-burtons cursor-pointer font-bold hover:text-slate-500 ml-5">
@@ -98,34 +68,10 @@ function App() {
                      Designed and Developed by Kris Nguyen
                   </div>
                </section>
-            </section>
+            </section> */}
          
-               {/* <Photo /> */}
-            <div className="grid grid-cols-4 gap-20 p-5 ">
-            {randomPhotos.length > 0 &&
-               randomPhotos.map((item, index) => {
-                  return (
-                     <div
-                        className="h-[400px] w-[400px] p-3 bg-white shadow-md rounded-lg"
-                        key={item.id}
-                     >
-                        <img
-                           className="w-full h-full object-cover rounded-lg"
-                           src={item.download_url}
-                           alt="item.author"
-                        />
-                     </div>
-                  );
-               })}
-         </div>
-         <div className="text-center">
-            <button
-               onClick={handleLoadMore}
-               className="text-2xl border-lime-200 inline-block px-8 py-3 my-8 rounded-xl bg-sky-600 text-white m-auto"
-            >
-               Load More
-            </button>
-         </div>
+               <Photo />
+            
          </div>
       </div>
    );
