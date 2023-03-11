@@ -12,7 +12,6 @@ import Dropdown from "./components/Dropdown";
 import HackerNewsWithHooks from "./components/news/HackerNewsWithHook";
 // import Input from "/components/Input";
 import Form2 from "./components/form/Form2";
-import MovieSearchApp from "./components/MovieSearchApp";
 
 
 function App() {
@@ -30,8 +29,7 @@ function App() {
          {/* <Dropdown></Dropdown> */}
          {/* <HackerNewsWithHooks></HackerNewsWithHooks> */}
          {/* <Form></Form> */}
-         {/* <Form2></Form2> */}
-         <MovieSearchApp></MovieSearchApp>
+         <Form2></Form2>
       </div>
    );
 }

@@ -44,6 +44,7 @@ const Photo = () => {
    return (
       //useEffect(callback, [dependencies])
       <div className="w-2/4 m-auto">
+         <h2>API PICSUM</h2>
          <div className="grid grid-cols-4 gap-20 p-5 ">
             {randomPhotos.length > 0 &&
                randomPhotos.map((item) => {
